@@ -1,85 +1,47 @@
-# Template Repo for ML Project
 
-This template repo will give you a good starting point for your second project. Besides the files used for creating a virtual environment, you will find a simple example of how to build a simple model in a python script. This is maybe the simplest way to do it. We train a simple model in the jupyter notebook, where we select only some features and do minimal cleaning. The output is then stored in simple python scripts.
+## Kickstarter-Project-Success-Prediction
 
-The data used for this is: [coffee quality dataset](https://github.com/jldbc/coffee-quality-database).
+## Overview
+
+Welcome to the Kickstarter Project Repository, a comprehensive resource for predicting the success of Kickstarter projects through the application of various machine learning techniques. This repository cantains machine learning model that has been trained to analyze and forecast the outcomes of Kickstarter campaigns. Alongside the model, you'll find meticulously crafted code for data cleaning, preprocessing, and training, ensuring that the predictive capabilities are built upon high-quality, refined datasets.
+
+
 
 ---
 
-## Set up a Kanban board on github
+## Relevant columns of the data set
 
-Go to ML-Project Template.
+* **backers_count**: Amount of people pledging money to the project                                     
+* **category** -> 'slug': Name of the projects' specific parent- & sub-category (part of json string)
+* **country**: Country of the projects creator 
+* **creator** -> 'id': id of the creator -> to be used as categorical variable (part of json string)
+* **fx_rate**: currency exchange rate
+* **goal**: Information on the amount of money needed to succeed in the local currency of the project
+* **launched_at**: Start date? of the project ()
+* **deadline**: End date of the project ()
+* **spotlight**: Project highlighted on the website
+* **staff_pick**: Marked by a staff member of kickstarter (more attention drawn towards project)
+* **state**: (successful/failed/canceled/live/suspended) -> exclude 'live' and combine 'canceled', 'suspended' with 'failed'
+* **static_usd_rate**: Exchange rate to transform goal in every column from current currency to USD
 
-Click on "Use this Template" (Green button)
-![alt text](./images/step_1a.png)
+## Repository Structure
 
-Create new project with relevant name, the owner should be your own account and **not** Neuefische. 
+- **model**: Contains saved files of the model.
+- **src**: Includes scripts for different purposes:
+- **hyperparameters.py**: Defines hyperparameters used in the model.
+- **data_loader.py**: Includes scripts for loading the data.
+- **train.py**: Script for training the models.
+- **predict.py**: Script for outcome of the models.
+- **notebook**: Experimental notebooks used for analysis and development.
+- **feature_engineering**.py: Script for the feature engineering.
 
-![alt text](./images/step_2.png)
+## Getting Started
 
-In your newly create repo, navigate to "Projects", and then click on "Add project" (green button). Normally you don't have created a project yet, so you can click the arrow navigation to create project on your profile. This project can be added at the end to your repository.
-![alt text](./images/add_project.png)
-
-
-You will be guided to your profiles projects. Click here on the green button "New project" to create a new project. Choose "board" view and **not** "table" view, then click "create".
-Good, now you have a board view. 
-![alt text](./images/boardview.png)
-
-Now change the name of your board, to match that of your chosen ML project. 
-
-Next, assign rights to all your team members by clicking on the 3 dots on the top right of the board, and then go to "settings". 
-
-Next, click on "Manage Access"
-Add your team mates by Searching for their github handle in the search window.
-
-Change their Role from ‘View’ to ‘Admin’. 
-Click on the green button “Invite” to add them. Repeat for all team members.
-![alt text](./images/team_access.png
-)
-
-Next, add action items with the relevant name e.g. “load data”, "get statistics", etc.
-
-Convert added item to issue by clicking on the 3 dots on the particular added item.
-
-Then select the repo you created in step3 for the issue to be added. (Select the project repo example “Fraud detection”)
-
-
-
-When in project repo, Go to issues, then go to milestones. 
-
-Click on ”Add milestone”.
-
-Give the milestone a due date and description as per the example provided by the coaches. 
-
-Add description of: 
-
-A) What needs to be completed to be done with the milestone
-
-B) The definition of done: what will your result look like when you have completed the milestone? (check the provided format)
-![alt text](./images/create_milestone.png)
-
-Now navigate to "issues".
-
-Assign issues to milestones, give it assignees (people who will work on the task). 
-![alt text](./images/tasks_to_mileston.png)
-
-### Optional: Add workflows
-
-Workflows can help you keep your kanban board automatically on track. 
-
-Select the project created in the steps above.  
-
-Click on the 3 dots to the far right of the board (...)
-
-Select workflow as the first option. 
-
-Activate the ones you feel necessary to your project
-
-Go back to your project repository (fraud detection))
+1. Clone this repository.
+2. Set up a Python environment and install the necessary dependencies listed in requirements.txt.
+3. Utilize the provided scripts in the src directory for model training, data preprocessing, etc.
 
 ## Set up your Environment
-
-
 
 ### **`macOS`** type the following commands : 
 
@@ -151,8 +113,7 @@ In order to test that predict works on a test set you created run:
 python example_files/predict.py models/linear_regression_model.sav data/X_test.csv data/y_test.csv
 ```
 
-## Limitations
 
-Development libraries are part of the production environment, normally these would be separate as the production code should be as slim as possible.
+
 
 
