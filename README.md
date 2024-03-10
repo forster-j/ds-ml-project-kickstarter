@@ -17,10 +17,10 @@ Welcome to the Kickstarter Project Repository, a comprehensive resource for pred
 * **creator** -> 'id': id of the creator -> to be used as categorical variable (part of json string)
 * **fx_rate**: currency exchange rate
 * **goal**: Information on the amount of money needed to succeed in the local currency of the project
-* **launched_at**: Start date? of the project ()
-* **deadline**: End date of the project ()
-* **spotlight**: Project highlighted on the website
-* **staff_pick**: Marked by a staff member of kickstarter (more attention drawn towards project)
+* **launched_at**: Start date? of the project
+* **deadline**: End date of the project
+* **spotlight**: Project highlighted on the website -> excluded since unclear if this only happens after a project has been funded
+* **staff_pick**: Marked by a staff member of kickstarter (more attention drawn towards project) -> excluded since unclear if this only happens after a project has been funded
 * **state**: (successful/failed/canceled/live/suspended) -> exclude 'live' and combine 'canceled', 'suspended' with 'failed'
 * **static_usd_rate**: Exchange rate to transform goal in every column from current currency to USD
 
